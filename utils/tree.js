@@ -31,3 +31,25 @@ export function getArrayFromTreeNode(root) {
   }
   return arr
 }
+
+export const getTreeFromArray = arr => {
+  if (!arr.length) return null
+  const root = new TreeNode(arr[0])
+  // for (let i = )
+  const queue = []
+  queue.push(root)
+  let idx = 1
+  while (idx < arr.length) {
+    const item = queue.shift()
+    if (arr[idx] !== undefined) {
+      item.left = new TreeNode(arr[idx])
+      queue.push(item.left)
+    }
+    if (arr[++idx] !== undefined) {
+      item.right = new TreeNode(arr[idx])
+      queue.push(item.right)
+    }
+    idx++
+  }
+  return root
+}

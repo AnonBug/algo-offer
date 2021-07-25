@@ -1,16 +1,16 @@
  import algo from '../src/jz13.js';
 
 const map = [
-  [[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],"ABCCED", true],
-  [[["a","b"],["c","d"]], "abcd", false],
-  [[['a']], 'b', false],
-  [[["a","b"]], 'ba', true]
+  [2, 3, 1, 3],
+  [3, 1, 0, 1],
+  [100, 100, 20, 6117],
+  [1, 1, 0, 1]
 ]
 
 
 map.forEach((item) => {
   test(`矩阵 ${item[0]} 中的路径 ${item[1]}`, () => {
-    expect(algo(item[0], item[1]))
-      .toBe(item[2]);
+    expect(algo(item[0], item[1], item[2]))
+      .toBe(item[3]);
   });
 })
