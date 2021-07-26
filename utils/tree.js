@@ -9,7 +9,7 @@ export class TreeNode {
 export function getArrayFromTreeNode(root) {
   if (!root) return []
   const arr = []
-  let queue = []
+  const queue = []
   queue.push(root)
   while (queue.length) {
     const item = queue.shift()
@@ -35,17 +35,17 @@ export function getArrayFromTreeNode(root) {
 export const getTreeFromArray = arr => {
   if (!arr.length) return null
   const root = new TreeNode(arr[0])
-  // for (let i = )
   const queue = []
   queue.push(root)
   let idx = 1
   while (idx < arr.length) {
     const item = queue.shift()
-    if (arr[idx] !== undefined) {
+    if (arr[idx] !== null) {
       item.left = new TreeNode(arr[idx])
       queue.push(item.left)
     }
-    if (arr[++idx] !== undefined) {
+    idx++
+    if (idx < arr.length && arr[idx] !== null) {
       item.right = new TreeNode(arr[idx])
       queue.push(item.right)
     }
