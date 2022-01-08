@@ -18,4 +18,4 @@ var countDigitOne = function (n) {
   return res
 };
 
-export default countDigitOne
+export default countDigitOne;
